@@ -111,6 +111,20 @@
 
 //结构体作业
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //操作数题
 //写一个函数返回参数二进制中 1 的个数
 
@@ -436,3 +450,322 @@
 //
 //	return 0;
 //}
+
+
+
+
+//KiKi想知道已经给出的三条边a,b,c 能否构成三角形，如果能构成三角形，判断三角形的类型（等边三角形，等腰三角形，或普通三角形）
+//输入描述：
+//题目有多组输入数据，每一行输入三个a,b,c (0<a,b,c<1000),作为三角形的三个边，用空格隔开
+//输出描述：
+//针对每组输入数据，输出占一行，如果能构成三角形，等边三角形则输出"Equilateral Triangle", 等腰三角形则输出"Isosceles Triangle!", 其余的三角形则输出"Ordinary Triangle!", 反之输出"No Triangle!"
+//示例1：
+//输入：2 3 2
+//	   3 3 3
+//输出：Isosceles Triangle
+//		Equilateral Triangle
+
+//int main()
+//{
+//	int a = 0;
+//	int b = 0;
+//	int c = 0;
+//
+//	
+//	while(scanf("%d %d %d", &a, &b, &c) == 3)
+//	{
+//		if (a + b > c && b + c > a && a + c > b)
+//		{
+//			if (a == b && b == c)
+//			{
+//				printf("Equilateral Triangle!\n");
+//			}
+//			else if ((a == b && a!=c) || (b == c && b!=a) || (a == c && a!=b))
+//			{
+//				printf("Isosceles Triangle!\n");
+//			}
+//			else
+//			{
+//				printf("Ordinary Triangle!\n");
+//			}
+//
+//
+//		}
+//		else
+//		{
+//			printf("Not a Triangle!\n");
+//		}
+//
+//	}
+//
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//指针作业
+//使用指针打印数组内容
+//写一个函数打印arr数组的内容，不使用数组下标，使用指针
+//arr是一个整形一维数组
+
+//void my_print(int* arr, int sz)
+//{
+//	int i = 0;
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", *(arr + i));
+//	}
+//	printf("\n");
+//
+//}
+//
+//int main()
+//{
+//	int arr[] = {1,2,3,4,5,6,7,8,9,10};
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	my_print(arr, sz);
+//
+//
+//
+//
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+//将一个字符串str的内容颠倒过来，并输出。
+//数据范围：1<=len(str)<=10000
+//输入描述：输入一个字符串，可以有空格
+//输出描述：输出逆序的字符串
+
+
+//int main()
+//{
+//	char str[10001] = { 0 };
+//	gets(str);	//接收字符串，有空格也不会停下		//scanf如果接收到空格会自动停止
+//	int left = 0;
+//	int right = strlen(str) - 1;
+//	while (left < right)
+//	{
+//		char tmp = str[left];
+//		str[left] = str[right];
+//		str[right] = tmp;
+//		left++;
+//		right--;
+//	}
+//	printf("%s\n", str);
+//
+//
+//
+//	printf("%s", str);
+//
+//
+//
+//	return 0;
+//}
+
+
+
+
+
+
+
+//计算求和
+//题目内容：求Sn = a+aa+aaa+aaaa+aaaaa 的前五项之和，其中a是一个数字
+//例如：2+22+222+2222+22222
+
+//int main()
+//{
+//	int a = 0;
+//	int n = 0;
+//	int i = 0;
+//	int sum = 0;
+//	
+//	scanf("%d%d", &a, &n);
+//	int fix_a = a;
+//	for (i = 0; i < n; i++)
+//	{
+//		
+//		sum += a;
+//		a = (a * 10) + fix_a;
+//
+//
+//
+//	}
+//
+//	printf("%d\n", sum);
+//
+//
+//	return 0;
+//}
+
+
+//int main()
+//{
+//	int a = 0;
+//	int n = 0;
+//	int i = 0;
+//	int sum = 0;
+//	int v = 0;
+//	scanf("%d%d", &a, &n);
+//
+//	for (i = 0; i < n; i++)
+//	{
+//		v = (v * 10) + a;
+//		sum += v;
+//
+//	}
+//	printf("%d\n", sum);
+//
+//	return 0;
+//
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//求出0-100000之间的所有"水仙花数"并输出。
+//“水仙花数”是指一个n位数，其各位数字的n次方之和确好等于该数本身，如153 = 1^3 + 5^3 + 3^3,则153是一个"水仙花数"//因为三位数才算水仙花数
+//#include<math.h>
+//int main()
+//{
+//	int i = 0;
+//	for (i = 0; i <= 100000; i++)
+//	{
+//		int count = 1;
+//		int tmp = i;
+//		int sum = 0;
+//		//1.要算有几个个位数
+//		while (tmp/10)
+//		{
+//			count++;
+//			tmp /= 10;
+//		}
+//		
+//
+//		//2.一个一个的乘以个位数次方，并总和
+//		tmp = i;
+//		while (tmp)
+//		{
+//			sum += pow(tmp % 10, count);
+//			tmp /= 10;
+//		}
+//		if (sum == i)
+//		{
+//			printf("%d ", sum);
+//		}
+//
+//	}
+//
+//
+//
+//	return 0;
+//}
+
+
+
+
+
+
+//打印菱形
+
+//int main(){
+//	int line = 0;	//菱形上半部分的行数
+//	int i = 0;
+//	scanf("%d", &line);
+//
+//	//菱形上半部分-----line
+//	for (i = 0; i < line; i++)
+//	{
+//		int j = 0;
+//		//printf空格
+//		for (j = 0; j < line - 1 - i; j++)
+//		{
+//			printf(" ");
+//		}
+//		//printf *
+//		for (j = 0; j < 2 * i + 1; j++)
+//		{
+//			printf("*");
+//		}
+//
+//		printf("\n");
+//	}
+//
+//	//菱形下班部分------line-1
+//	for (i = 0; i < line - 1; i++)
+//	{
+//		int j = 0;
+//		//printf空格
+//		for (j = 0; j < i + 1; j++)
+//		{
+//			printf(" ");
+//		}
+//		for (j = 0; j < 2*(line-1-i)-1; j++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+
+
+
+
+//喝汽水，1瓶汽水1元，2个空瓶可以换1瓶汽水，给20元，可以多少汽水？
+
+//int main()
+//{
+//	int money = 0;
+//	scanf("%d", &money);
+//	int soda = money;
+//	int empty = soda;
+//
+//	while (empty>=2)
+//	{
+//		soda += empty / 2;
+//		empty = empty / 2 + empty % 2;
+//
+//	}
+//	printf("%d", soda);
+//	return 0;
+//}
+
+
+
+
+
+
+
+
