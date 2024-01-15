@@ -1,0 +1,4 @@
+﻿  test.c
+C:\Users\Lenovo\Desktop\鹏哥C语言\初阶测评\初阶测评\test.c(107,2): warning C4013: “gets”未定义；假设外部返回 int
+C:\Users\Lenovo\Desktop\鹏哥C语言\初阶测评\初阶测评\test.c(108,12): warning C4013: “strlen”未定义；假设外部返回 int
+  初阶测评.vcxproj -> C:\Users\Lenovo\Desktop\鹏哥C语言\初阶测评\x64\Debug\初阶测评.exe
